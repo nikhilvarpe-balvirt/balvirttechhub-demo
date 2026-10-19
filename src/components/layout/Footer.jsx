@@ -5,8 +5,8 @@ import { siteConfig, navLinks } from '../../data/siteConfig'
 import { courses } from '../../data/courses'
 import { LinkedinIcon, InstagramIcon, YoutubeIcon } from '../shared/SocialIcons'
 import Reveal from '../shared/Reveal'
-import logo from '../../assets/images/s1.png'
-//import logo from '../../assets/images/bthlogo.webp'
+//import logo from '../../assets/images/s1.png'
+import logo from '../../assets/images/bthlogo.webp'
 
 const socials = [
   { Icon: LinkedinIcon, href: 'linkedin' },

@@ -4,8 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { navLinks, siteConfig } from '../../data/siteConfig'
 import Button from '../shared/Button'
-import logo from '../../assets/images/s1.png'
-// import logo from '../../assets/images/bthlogo.webp'
+//import logo from '../../assets/images/s1.png'
+import logo from '../../assets/images/bthlogo.webp'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
