@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@theme {
+  /* "brand" = near-black, violet-tinted neutral scale (charcoal surfaces + body text) */
+  --color-brand-50: #f6f5fa;
+  --color-brand-100: #ece9f4;
+  --color-brand-200: #d6d2e6;
+  --color-brand-300: #b3aec9;
+  --color-brand-400: #8b86a6;
+  --color-brand-500: #6b6684;
+  --color-brand-600: #504c68;
+  --color-brand-700: #3b3752;
+  --color-brand-800: #262338;
+  --color-brand-900: #17152a;
+  --color-brand-950: #0b0a14;
+
+  /* "accent" = violet, paired with Tailwind's built-in cyan for gradients */
+  --color-accent-50: #f5f1ff;
+  --color-accent-100: #ebe3ff;
+  --color-accent-200: #d3c2ff;
+  --color-accent-300: #b69cff;
+  --color-accent-400: #9b76ff;
+  --color-accent-500: #8257f0;
+  --color-accent-600: #6d3edb;
+  --color-accent-700: #5a2fb8;
+  --color-accent-800: #45247f;
+  --color-accent-900: #2e1859;
+  --color-accent-950: #1b0f3d;
+
+  --font-heading: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-brand-950);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(90deg, var(--color-accent-300), #67e8f9, var(--color-accent-300));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 6s ease-in-out infinite;
+}
+
+/* Same idea as .text-gradient-accent, but deeper/more saturated stops for use
+   on light backgrounds (the pastel version above is built for dark sections
+   and would look washed out on white). */
+.text-gradient-accent-deep {
+  background: linear-gradient(90deg, var(--color-accent-600), #0891b2, var(--color-accent-600));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 6s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(90deg, var(--color-accent-500), #22d3ee);
+}
+
+/* Dark section background (heroes, footer, feature blocks) — a rich, saturated
+   violet instead of a flat near-black neutral, so photos/copy on top of it pop
+   and it reads as part of the same brand-color family as the buttons/badges. */
+.bg-gradient-hero {
+  background: linear-gradient(135deg, var(--color-accent-900), var(--color-accent-800) 55%, var(--color-accent-700));
+}
+
+/* Page-hero background: a soft cool white instead of a dark surface, with a
+   faint tinted grid + violet/cyan glow washes baked in (same idea as
+   .bg-section-light, just brighter and a touch bolder for a hero moment). */
+.bg-hero-light {
+  position: relative;
+  background-color: #f7f9fc;
+  background-image:
+    radial-gradient(620px circle at 15% -10%, rgba(130, 87, 240, 0.12), transparent 60%),
+    radial-gradient(520px circle at 100% 0%, rgba(34, 211, 238, 0.11), transparent 55%),
+    linear-gradient(rgba(23, 21, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 21, 42, 0.04) 1px, transparent 1px);
+  background-size: auto, auto, 44px 44px, 44px 44px;
+}
+
+/* Light sections get the same "designed system" treatment as the dark hero:
+   soft violet/cyan glow washes + a faint tinted grid, instead of flat white. */
+.bg-section-light {
+  position: relative;
+  background-color: #fbfaff;
+  background-image:
+    radial-gradient(560px circle at 12% -10%, rgba(130, 87, 240, 0.09), transparent 60%),
+    radial-gradient(480px circle at 100% 10%, rgba(34, 211, 238, 0.07), transparent 55%),
+    linear-gradient(rgba(23, 21, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 21, 42, 0.035) 1px, transparent 1px);
+  background-size: auto, auto, 44px 44px, 44px 44px;
+}
+
+.card-elevated {
+  border-radius: 1.25rem;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(23, 21, 42, 0.04), 0 12px 28px -12px rgba(23, 21, 42, 0.12);
+  transition: box-shadow 0.25s ease;
+}
+
+.card-elevated:hover {
+  box-shadow: 0 1px 2px rgba(23, 21, 42, 0.05), 0 20px 40px -14px rgba(130, 87, 240, 0.22);
+}
+
+.icon-chip-gradient {
+  background: linear-gradient(135deg, var(--color-accent-500), #22d3ee);
+}
+
+@keyframes blob-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(24px, -32px) scale(1.08); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+.animate-blob {
+  animation: blob-float 14s ease-in-out infinite;
+}
+
+.animate-blob-delayed {
+  animation: blob-float 14s ease-in-out infinite;
+  animation-delay: -7s;
+}
