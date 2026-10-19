@@ -49,6 +49,7 @@ function localApiPlugin(env) {
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
+    base: '/balvirttechhub-demo/',
     plugins: [react(), localApiPlugin(env)],
   }
 })
