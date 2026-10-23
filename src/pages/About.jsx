@@ -24,9 +24,14 @@ export default function About() {
         <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <Badge icon={Rocket} className="!bg-white/10 !text-accent-300">A brand-new hub</Badge>
           <h1 className="mt-5 font-heading text-4xl font-bold sm:text-5xl">About Balvirt Tech Hub</h1>
-          <p className="mt-4 text-brand-200">
-            [Add founder/mentor story: background, motivation for starting the hub, and what makes the teaching approach different]
-          </p>
+          <figure className="mt-5">
+            <blockquote className="text-lg text-brand-100">
+              &ldquo;My vision is not just to build a successful company, but to create opportunities, empower people, and build something that makes a lasting difference.&rdquo;
+            </blockquote>
+            <figcaption className="mt-3 text-sm font-semibold uppercase tracking-wide text-accent-300">
+              &mdash; Ramdas Darade, Founder &amp; CEO
+            </figcaption>
+          </figure>
         </div>
       </section>
 
